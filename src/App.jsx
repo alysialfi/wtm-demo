@@ -1,10 +1,11 @@
-import { useState } from 'react'
+import { useState, useRef } from 'react'
 import './App.css'
 import parkNoCloudBg from './assets/park-no-cloud.png'
 import cloud from './assets/cloud.png'
-import cat from './assets/cat.png'
 import envelope from './assets/envelope.png'
-import paper from './assets/paper.jpg'
+import megaphone from './assets/megaphone.png'
+import paper from './assets/paper.webp'
+import animatedCat from './assets/catGifBrown.gif'
 
 function App() {
   const [isLetterOpened, setIsLetterOpened] = useState(false)
@@ -13,11 +14,12 @@ function App() {
 
   return (
     <>
-      <div className='charmonman-regular w-full h-screen flex justify-center'>
-				<div className='relative w-full lg:w-1/3 h-full bg-red-300 bg-cover' style={{ backgroundImage: `url(${parkNoCloudBg})` }}>
+      <div className='charmonman-regular w-full h-screen bg-black flex justify-center items-center overflow-hidden'>
+				<div className='relative w-full lg:w-1/3 h-full bg-blue-300 bg-cover' style={{ backgroundImage: `url(${parkNoCloudBg})`, height: 'calc(100vh - 80px)' }}>
 					<img src={cloud} alt="" className='animate-pulse w-full absolute -left-10 top-0'/>
-					<img src={cat} alt="" onClick={() => setIsNameDialogOpened(true)} className='w-2/3 absolute bottom-0 lg:-bottom-10 left-20 cursor-pointer'/>
-					<img src={envelope} alt="" onClick={() => setIsLetterOpened(true)} className='w-1/6 absolute top-8 right-4 contrast-120 brightness-125 -rotate-3 cursor-pointer animate-bounce'/>
+					<img src={animatedCat} alt="" onClick={() => setIsNameDialogOpened(true)} className={`scale-75 absolute -bottom-10 cursor-pointer`} width={800} height={600} />
+					<img src={envelope} alt="" onClick={() => setIsLetterOpened(true)} className='w-1/6 absolute top-8 right-6 contrast-120 brightness-125 cursor-pointer animate-waving-envelope'/>
+					<img src={megaphone} alt="" className='w-12 absolute top-8 left-6 cursor-pointer'/>
 					{	isLetterOpened &&
 						<div className='relative w-full h-screen'>
 							<div className='absolute top-0 left-0 bg-black bg-opacity-70 w-full h-screen'></div>
