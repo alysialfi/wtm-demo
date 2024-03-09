@@ -6,7 +6,7 @@ on:
 env:
   PROJECT_ID: wtm-demo
   REGION: asia-southeast2
-  GAR_LOCATION: asia-southeast2-docker.pkg.dev/wtm-demo-416609/cr-artifacts
+  GAR_LOCATION: asia-southeast2-docker.pkg.dev/wtm-demo-416609/cr-artifacts/wtm-demo
   CLOUD_RUN_SERVICE: wtm-demo
 
 jobs:
